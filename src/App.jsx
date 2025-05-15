@@ -4,6 +4,7 @@ import './App.css'
 import Home from './Pages/home/Home'
 import Cart from './Pages/cart/Cart'
 import { useCartContext } from './context/cartContext/CartContext'
+import Header from './component/header/Header'
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
 
   return (
     <>
+    <Header />
       <BrowserRouter>
         <Routes>
           <Route path='/' element = {<Home/>}/>
