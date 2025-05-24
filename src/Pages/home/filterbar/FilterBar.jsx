@@ -19,7 +19,7 @@ const FilterBar = () => {
   }
 
   return (
-    <div className=" min-h-screen w-full max-w-[20rem] border-r border-r-white/20 p-6 ">
+    <div className="  w-full max-w-[20rem] border-r border-r-white/20 p-6 sticky top-[3.5rem] h-fit ">
       {/* Radio ascending and decending */}
       <div>
         <div className="form-control m-3">

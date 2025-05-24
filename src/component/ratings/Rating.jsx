@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const Rating = ({defaultRating = 1, isEditable, onRatingChange = ()=> {} }) => {
+const Rating = ({defaultRating = 1, isEditable, onRatingChange = ()=> {}, className}) => {
 
     const [selectedRating, setSelectedRating] = useState(defaultRating);
 
@@ -13,9 +13,9 @@ const Rating = ({defaultRating = 1, isEditable, onRatingChange = ()=> {} }) => {
             return(
                 <>
                     {value <= selectedRating ? (
-                        <input defaultChecked type="radio"  onClick={() => setSelectedRating(value)} className="mask mask-star-2 bg-orange-400  "/>
+                        <input defaultChecked type="radio"  onClick={() => setSelectedRating(value)} className={`mask mask-star-2 bg-orange-400 ${className}`}/>
                     ) : (
-                        <input defaultChecked type="radio" onClick={() => setSelectedRating(value)} className="mask mask-star-2 " />
+                        <input defaultChecked type="radio" onClick={() => setSelectedRating(value)} className={`mask mask-star-2 ${className}`} />
                     )}
                 </>
             );

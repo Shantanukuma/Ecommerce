@@ -7,9 +7,9 @@ const Body = () => {
   console.log(products);
 
   return (
-    <div className="grid grid-cols-3 gap-[1rem] ">
+    <div className="grid grid-cols-3 gap-[1rem] p-3">
       {products.map((productDetails) => (
-        <ProductCard productDetails = {productDetails}/>
+        <ProductCard key ={productDetails.id}   productDetails = {productDetails}/>
       ))}
     </div>
   );
