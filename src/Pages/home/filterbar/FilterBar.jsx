@@ -4,9 +4,19 @@ import Rating from "../../../component/ratings/Rating";
 const FilterBar = () => {
   const [filters, setFilters] = useState({
     price: 5000,
-    ratings: 2,
+    ratings: 4,
   });
-  console.log(filters);
+  const handleInputChange = (event) => {
+    // console.log(event.target);
+    
+    const {name, value} = event.target;
+    console.log(name, value);
+
+    setFilters((prev) => ({
+      ...prev,
+      [name]: value
+    }));
+  }
 
   return (
     <div className=" min-h-screen w-full max-w-[20rem] border-r border-r-white/20 p-6 ">
@@ -79,14 +89,20 @@ const FilterBar = () => {
 
       {/* price range */}
       <div className="flex flex-col gap-3">
-        <p>Price: <strong>5000 </strong>Rs</p>
+        <p>Price: <strong>{filters.price} </strong>Rs</p>
         <input
           type="range"
           min={0}
-          max="100"
+          max={5000}
+          name="price"
           value={filters.price}
           className="range range-primary"
+          onChange={handleInputChange}
         />
+      </div>
+      {/* Button */}
+      <div className=" m-3">
+        <button className="btn btn-neutral w-full ">Clear Filters</button>
       </div>
     </div>
   );
